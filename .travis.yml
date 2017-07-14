@@ -17,7 +17,7 @@ env:
   - COMMIT_AUTHOR_EMAIL: "patternfly-build@redhat.com"
   - COMMIT_AUTHOR_USERNAME: "patternfly-build"
   - TRIGGER_REPO_SLUG: "patternfly/patternfly"
-  - TRIGGER_REPO_BRANCH: "master"
+  - TRIGGER_REPO_BRANCH: "master-dist"
 
 notifications:
   email: false

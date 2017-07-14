@@ -1,6 +1,6 @@
 {
   "name": "patternfly",
-  "version": "0.0.0-semantically-released",
+  "version": "0.0.0-development",
   "author": "Red Hat",
   "license": "Apache-2.0",
   "dependencies": {
@@ -48,6 +48,7 @@
     "patternfly-eng-release": "3.25.1",
     "pixrem": "^3.0.1",
     "semantic-release": "^6.3.6",
+    "semantic-release-cli": "^3.0.3",
     "table": "3.7.9"
   },
   "optionalDependencies": {
@@ -77,6 +78,7 @@
     "start": "npm run build; grunt server & open http://localhost:9000",
     "grunt": "grunt",
     "commit": "git-cz",
+    "setup": "echo \"This installs and runs the semantic-release-cli globally.\"; semantic-release-cli setup",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "czConfig": {
