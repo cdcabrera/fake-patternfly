@@ -15,13 +15,13 @@ getDeployKey () {
   echo "Checking Travis ENV VAR: ${ENCRYPTED_KEY_VAR}..."
   ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
   echo "Checking Travis ENV VAR: ${ENCRYPTED_IV_VAR}..."
-  ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
+  #ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
   echo "Run Openssl"
-  openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
+  #openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
   echo "Run chmod"
-  chmod 600 deploy_key
-  eval `ssh-agent -s`
-  ssh-add deploy_key
+  #chmod 600 deploy_key
+  #eval `ssh-agent -s`
+  #ssh-add deploy_key
 }
 
 if [ "${TRAVIS_REPO_SLUG}" != "${TRIGGER_REPO_SLUG}" -o "${TRAVIS_BRANCH}" != "${TRIGGER_REPO_BRANCH}" ]; then
@@ -38,4 +38,5 @@ git add .
 git commit -m "Deploy to GitHub Pages"
 
 git remote add ssh-origin $SSH_REPO
-git push --force --quiet ssh-origin master:gh-pages
+#git push --force --quiet ssh-origin master:gh-pages
+git remote
